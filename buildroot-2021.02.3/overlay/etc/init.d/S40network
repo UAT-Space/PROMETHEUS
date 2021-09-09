@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# KEEP THIS FILE
+#
+# this file is used to blank out the original S40network file presesnt before
+# the overlay has been written. 
+# If this file is deleted, The pi will take a minute to boot rather than 
+# 10 - 20 seconds, and the network won't be brought up properly.

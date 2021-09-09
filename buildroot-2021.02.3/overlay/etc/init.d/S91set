@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# This is for misc purposes
+# 
+
+# Print out info for making the python script work
+
+start(){
+	#mount -o rw /dev/mmcblkp3 /mnt 
+
+	export VID_PATH=/mnt
+
+	# init the camera
+	v4l2-ctl -v width=1280,height=960,pixelformat=MJPG
+
+	export SCRIPT_DEBUG=1
+	export JSON_PATH=/mnt
+
+	#python3 /usr/local/bin/ins.py &
+	#ffmpeg -f v4l2 -video_size 1280x720 -input_format mjpeg -an -i /dev/video0 $VID_PATH/out.mjpg 
+	}
+	
+stop(){
+	killall ffmpeg
+	killall python3
+	}

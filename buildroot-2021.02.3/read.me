@@ -1,0 +1,39 @@
+*** Buildroot config ***	
+# Toolchain
+	[*] Enable WCHAR support
+
+# System config
+	System-hostname=rocketman
+	System-banner=It's gonna be a long long time
+	Root-password=toor
+	System-Path=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+	Root-fs-overlay=overlay
+
+# Target Packages
+	[*] Show packages that are also provided by busybox
+	## Audio and video applications
+		[*] ffmpeg
+		[*] v4l2grab
+		[*] v4l2loopback
+		[*]   utils
+	## Interpreter languages and scripting
+		[*] python3
+		[*]   python-RPi.GPIO
+	## Libraries
+		## Hardware handling
+			[*]    v4l-utils tools
+	## Hardware handling
+		###Firmware
+			[*] rpi-wifi-firmware
+	## Networking applications
+		[*] dhcp
+		[*]   dhcp client
+		[*] iw
+		[*] openssh
+		[*] wpa_supplicant
+		[*]   Install wpa_cli binary
+		[*]   Install wpa_client shared library
+		[*]   Install wpa_passphrase binary
+# Filesystem images
+	##ext2/3/4 root filesystem
+		(300M) exact size
